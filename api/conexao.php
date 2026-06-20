@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databasename = "click";
+$servername = "mysql-emyrhf.alwaysdata.net";
+$username = "emyrhf";
+$password = "123clickdb";
+$databasename = "emyrhf-click-db";
 
 //criação da conexão
 $conn = new mysqli($servername, $username, $password, $databasename);
