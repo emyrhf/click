@@ -1,0 +1,540 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --white: #edf2f4;
+    --black: #170312;
+    --main: #5299d3;
+    --secondary: #f9a03f;
+
+    --sm: 3.5rem;
+    --md: 5rem;
+
+    --width: 500px;
+
+    --flex-alignment: center;
+    --sombra: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#header {
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--white);
+}
+
+#header div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#header input {
+    background-color: #fff;
+    outline: none;
+    border: 2px solid var(--main);
+    border-radius: 999px;
+    height: 2rem;
+    width: 20rem;
+    padding: 0.5rem 0.75rem;
+}
+
+#header img {
+    cursor: pointer;
+}
+
+.conta {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    text-transform: lowercase;
+}
+
+.conta a:nth-child(2) {
+    background-color: var(--main);
+    color: var(--white);
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+}
+
+.conta a:nth-child(1) {
+    border: solid 2px var(--main);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+}
+
+#logo {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1rem;
+}
+
+.profileImg {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    object-fit: cover;
+}
+
+#menu {
+    display: none !important;
+    position: absolute;
+    right: 1rem;
+    top: 5.5rem;
+    background-color: var(--white);
+
+    width: 15rem;
+    box-shadow: var(--sombra);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+#menu h3 {
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+#menu.active {
+    display: flex !important;
+}
+
+#menu .deslogar {
+    width: 100%;
+    background-color: var(--main);
+    text-align: center;
+    color: var(--white);
+    padding: 0.25rem 0;
+}
+
+#menu .editarperfil {
+    width: 100%;
+    text-align: center;
+    color: var(--black);
+    padding: 0.25rem 0;
+    margin: 0.5rem 0.5rem;
+    
+}
+
+#formMain {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--main);
+    background-image: url("../imgs/wallpaper.png");
+    height: 100vh;
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+        drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+#formContainer {
+    background-color: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+}
+
+#formContainer h3 {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.inputContainer {
+    text-transform: lowercase;
+    max-width: 20rem;
+}
+
+.inputContainer input, .inputContainer textarea {
+    width: 100%;
+    appearance: none;
+    border: none;
+    outline: none;
+    border-bottom: 0.2em solid var(--main);
+    background: rgba(var(--main), 0.2);
+    border-radius: 0.2em 0.2em 0 0;
+    padding: 0.4em;
+    color: var(--main);
+    text-transform: none;
+}
+
+#submit {
+    background-color: var(--main);
+    color: var(--white);
+    text-align: center;
+    padding: 0.5rem 0;
+    border-radius: 999px;
+    font-weight: bold;
+    margin: 0.75rem 0 0;
+}
+
+main {
+    padding-top: var(--md);
+    position: relative;
+    min-height: 100vh;
+}
+
+#adicionarPost {
+    height: var(--sm);
+    width: var(--sm);
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    color: var(--white);
+
+    background-color: var(--main);
+    font-size: 1.5rem;
+    border-radius: 999px;
+    box-shadow: var(--sombra);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+.inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: var(--flex-alignment);
+    padding: 0 2rem;
+    gap: 0.75rem;
+}
+
+.inner figure {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--white);
+    height: min-content;
+    transition: transform 0.375s ease, z-index 0.375s ease;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--sombra);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.inner figure:hover {
+    transform: scale(1.02);
+    z-index: 3;
+}
+
+.inner figure img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    height: 15rem;
+    max-width: 100%;
+    width: auto;
+}
+
+.inner figure figcaption,
+#postContainer figure figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.75rem 0.5rem;
+}
+
+.inner figure figcaption h3,
+#postContainer figure h3 {
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+#enviarFotos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5rem;
+    height: calc(100vh - var(--md));
+}
+
+#adicionarArquivo {
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0.5rem;
+    width: 100%;
+}
+
+#enviarFotos > div {
+    flex: 1 1 0;
+    width: 100%;
+}
+
+#adicionarArquivo img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    display: none;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#adicionarArquivo img.active {
+    display: block;
+}
+
+#adicionarArquivo label {
+    background-color: var(--main);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+}
+
+#adicionarArquivo input {
+    display: none;
+}
+
+#inputs {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#inputs .inputContainer {
+    max-width: unset;
+}
+
+#inputs textarea {
+    width: 100%;
+    resize: none;
+}
+
+#inputs input[type="submit"] {
+    background-color: var(--main);
+    padding: 0.5rem 0.75rem;
+    color: var(--white);
+    text-align: center;
+    margin: 0.2rem 0;
+}
+
+#firstContainer {
+    height: calc(100vh - var(--md));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#postContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+#postContainer > div {
+    flex-grow: 1;
+    flex-basis: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#postContainer figure {
+    background-color: var(--white);
+    box-shadow: var(--sombra);
+    width: fit-content;
+}
+
+#postContainer figure img {
+    max-height: 75vh;
+    max-width: 100%;
+}
+
+#informacoesPublicadas {
+    display: flex;
+    align-items: normal !important;
+    justify-content: normal !important;
+    width: 100%;
+    gap: 1rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+#perfilPublicado {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 0.5rem;
+}
+
+#descricao {
+    background-color: var(--white);
+    padding: 0.5rem 0.75rem;
+}
+
+.profile {
+    border-radius: 999px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover;
+}
+
+#profileInfos {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#profileInfos span {
+    flex-grow: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#profileInfos button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+button i {
+    filter: drop-shadow(0 0 0.75rem var(--black));
+    font-size: 1.5rem;
+}
+
+#fotodeperfil {
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    border: solid #fff 5px;
+}
+
+#usuario {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+#usuario h1 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+#perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.flexButtons {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: .5rem;
+}
+
+.flexButtons * {
+    background-color: var(--main);
+    color: var(--white);
+    padding: .25rem .75rem;
+    border-radius: 999px;
+
+}
+
+#novoHeader {
+    flex-grow: 1;
+    position: relative;
+    cursor: pointer;
+    max-height: 100%;
+    color: var(--white);
+}
+
+#novoHeader i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 0.75rem var(--black));
+}
+
+#novoHeader img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#novaFoto{
+    height: 10rem;
+    width: 10rem;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    border: solid #fff 5px;
+    position: relative;
+
+}
+
+#novoFoto i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 0.75rem var(--black));
+}
+
+@media (min-width: 768px) {
+    #mostrarinfos {
+        align-items: unset;
+    }
+}
