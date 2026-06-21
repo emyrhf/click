@@ -21,7 +21,7 @@
 
     if (mysqli_stmt_affected_rows($stmt) > 0) {
         echo "Post excluído com sucesso!";
-        header("location: /click/visao/index.php?`");
+        header("location: /click/api/visao/index.php?`");
     } else {
         echo "Nenhum post encontrado para excluir.";
     }

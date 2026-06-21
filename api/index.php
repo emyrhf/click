@@ -1,4 +1,4 @@
 <?php
-    header("Location: /visao/index.php");
+    header("Location: /click/api/visao/index.php");
     exit;
 ?>

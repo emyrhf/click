@@ -36,7 +36,7 @@ if (!isset($_SESSION["usuario"])) {
         
         if ($logado) {
             echo'
-                <a id="adicionarPost" href="/click/visao/adicionar.php">
+                <a id="adicionarPost" href="/click/api/visao/adicionar.php">
                     + 
                 </a>
             ';
@@ -64,7 +64,7 @@ if (!isset($_SESSION["usuario"])) {
                     if (isset($isUser)) {
                         ?>
                             <div class="flexButtons">
-                                <a href="/click/visao/edicao.php?usuario=<?=$selecionado["username"]?>">editar perfil</a>
+                                <a href="/click/api/visao/edicao.php?usuario=<?=$selecionado["username"]?>">editar perfil</a>
                                 <button>compartilhar perfil</button>
                             </div>
                         <?php
@@ -84,8 +84,8 @@ if (!isset($_SESSION["usuario"])) {
                 <?php
                 if (mysqli_num_rows($posts) > 0) {
                     while ($imagem = mysqli_fetch_assoc($posts)) {?>
-                        <figure onclick="redirecionar('/click/visao/publicacao.php?id=<?=$imagem['url']?>')">
-                                <img src="../../click/public/imgs/<?=$imagem['url']?>">
+                        <figure onclick="redirecionar('/click/api/visao/publicacao.php?id=<?=$imagem['url']?>')">
+                                <img src="/click/api/public/imgs/<?=$imagem['url']?>">
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>
                                     <i class="fa-solid fa-thumbtack"></i>

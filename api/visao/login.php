@@ -5,7 +5,7 @@ if (!isset($_SESSION["usuario"])) {
     $logado = false;
 } else {
     $logado = true;
-    header("Location: /click/visao");
+    header("Location: /click/api/visao");
 }
 ?>
 <!DOCTYPE html>

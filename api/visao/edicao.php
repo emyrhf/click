@@ -31,12 +31,12 @@ if (!isset($_SESSION["usuario"])) {
         include("../components/header.php");
 
         if($selecionado["username"] !== $imgPerfil["username"]){
-            header("Location: /click/visao");
+            header("Location: /click/api/visao");
         }
     ?>
 
     <main>
-    <form action="/click/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
+    <form action="/click/api/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
         <section>
             <label for="updateHeader" class="imageUpdate inputLabel">
                 <img src="../public/imgs/<?=$selecionado["header"]?>" id="profileHeader">

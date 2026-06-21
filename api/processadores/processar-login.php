@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] =="POST"){
         session_start();
         $_SESSION["usuario"] = $usuario;
         $_SESSION["email"] = $email;
-        header("Location: /click/visao");
+        header("Location: /click/api/visao");
         exit;
     }else{
-        header("Location: /click/visao/login.php?erro=1");
+        header("Location: /click/api/visao/login.php?erro=1");
     }
 }
 ?>
