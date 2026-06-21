@@ -1,7 +1,7 @@
 <?php    
     session_start();
-    include '../conexao.php';
-    include '../modelo/post.php';
+    include __DIR__ . "/../conexao.php";
+    include __DIR__ . "../modelo/post.php";
 
     if (isset($_POST['enviar']) && isset($_FILES['imagemAdicionada'])) {
         $titulo = $_POST["tituloDaImagem"];

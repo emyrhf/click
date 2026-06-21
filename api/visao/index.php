@@ -21,7 +21,7 @@ if (!isset($_SESSION["usuario"])) {
 </head>
 <body>
     <?php
-        include("../../components/header.php")
+        include __DIR__ . "/../components/header.php";
     ?>
 
     <main>

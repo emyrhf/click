@@ -1,5 +1,5 @@
 <?php   
-    include("../components/imgPerfil.php")
+    include __DIR__ . "/../components/imgPerfil.php";
 ?>
 
 <header id="header">
