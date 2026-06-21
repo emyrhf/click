@@ -1,5 +1,5 @@
 <?php   
-    include __DIR__ . "/../components/imgPerfil.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/api/components/imgPerfil.php";
 ?>
 
 <header id="header">
@@ -11,7 +11,7 @@
                 ?>
                 <img src=
                     <?php
-                        echo "../public/imgs/". $imgPerfil["img_perfil"]; 
+                        echo "/api/public/imgs/". $imgPerfil["img_perfil"]; 
                     ?>
                  onClick="toggleMenu()" class="profileImg">
                 <div id="menu">

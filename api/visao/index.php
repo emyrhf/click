@@ -39,7 +39,7 @@ if (!isset($_SESSION["usuario"])) {
             <?php
                 $imagens = "SELECT * FROM posts ORDER BY url DESC";
                 $res = mysqli_query($conn, $imagens);
-                $pasta = "../../public/imgs/*";
+                $pasta = "/click/api/public/imgs/*";
                 $imagensProntas = glob($pasta);
 
 

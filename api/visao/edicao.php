@@ -39,7 +39,7 @@ if (!isset($_SESSION["usuario"])) {
     <form action="/click/api/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
         <section>
             <label for="updateHeader" class="imageUpdate inputLabel">
-                <img src="../public/imgs/<?=$selecionado["header"]?>" id="profileHeader">
+                <img src="/api/public/imgs/<?=$selecionado["header"]?>" id="profileHeader">
                 <span class="spanLabel center">
                     <i class="fa-solid fa-pen"></i>
                 </span>
@@ -49,7 +49,7 @@ if (!isset($_SESSION["usuario"])) {
         <section>
             <div>
                 <label for="updateProfilePic" class="imageUpdate inputLabel" >
-                    <img src="../public/imgs/<?=$selecionado["img_perfil"]?>" id="profilePic">
+                    <img src="/api/public/imgs/<?=$selecionado["img_perfil"]?>" id="profilePic">
                     <span class="spanLabel right">
                         <i class="fa-solid fa-pen"></i>
                     </span>

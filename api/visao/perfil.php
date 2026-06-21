@@ -47,11 +47,11 @@ if (!isset($_SESSION["usuario"])) {
     <main id="perfil">
         <section id="seuPerfil">
             <div id="profileInfos">
-                <span style="background-image:url(../public/imgs/<?=$selecionado["header"]?>);"></span>
+                <span style="background-image:url(/api/public/imgs/<?=$selecionado["header"]?>);"></span>
                 
                 <img src=
                     <?php
-                        echo "../public/imgs/". $selecionado["img_perfil"]; 
+                        echo "/api/public/imgs/". $selecionado["img_perfil"]; 
                     ?>
                     id="fotodeperfil"
                 >
@@ -75,7 +75,7 @@ if (!isset($_SESSION["usuario"])) {
         <section id="posts">
             <?php
 
-                $pasta = "../public/imgs/*";
+                $pasta = "/api/public/imgs/*";
                 $imagensProntas = glob($pasta);
                 $posts = mysqli_query($conn, "SELECT * FROM posts WHERE email = '{$selecionado["email"]}'");
             ?>

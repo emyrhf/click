@@ -1,7 +1,7 @@
 <?php    
     session_start();
-    include __DIR__ . "/../conexao.php";
-    include __DIR__ . "../modelo/post.php";
+    include include $_SERVER['DOCUMENT_ROOT'] . "/api/conexao.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/post.php";
 
     if (isset($_POST['enviar']) && isset($_FILES['imagemAdicionada'])) {
         $titulo = $_POST["tituloDaImagem"];
@@ -16,7 +16,7 @@
             $extencao_img = pathinfo($nome_img, PATHINFO_EXTENSION);
 
             $nome_unico  = uniqid("upload-", true).'.'.$extencao_img;
-            $enviar_para = '../public/imgs/'.$nome_unico;
+            $enviar_para = '/api/public/imgs/'.$nome_unico;
             move_uploaded_file($temp_nome_img, $enviar_para);
 
             $imagem = new Post($conn);

@@ -1,6 +1,6 @@
 <?php    
     include __DIR__ . "/../conexao.php";
-    include __DIR__ . "/../modelo/usuario.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/usuario.php";
 
     if (($_SERVER["REQUEST_METHOD"]=="POST")){
         $nome = $_POST["nome"];

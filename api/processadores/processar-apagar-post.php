@@ -2,7 +2,7 @@
     session_start();
     
     require __DIR__ . "/../conexao.php";
-    include __DIR__ . "/../modelo/post.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/post.php";
 
     session_start();
     if (!isset($_SESSION["usuario"])) {

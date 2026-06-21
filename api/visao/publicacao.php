@@ -59,7 +59,7 @@ if (!isset($_SESSION["usuario"])) {
                         <div id="postContainer">
                             <div id="fotoPublicada">
                                 <figure>
-                                    <img src="../public/imgs/<?=$imagem['url']?>">
+                                    <img src="/api/public/imgs/<?=$imagem['url']?>">
                                     <figcaption>
                                         <h3><?=$imagem['titulo']?></h3>
                                         <i class="fa-solid fa-thumbtack"></i>
@@ -79,7 +79,7 @@ if (!isset($_SESSION["usuario"])) {
                             <div id="informacoesPublicadas" onClick="location.href = `/click/api/visao/perfil.php?usuario=<?=$usuario["username"]?>`">
                                 <div id="perfilPublicado">
                                     <img src=<?php
-                                        echo "../public/imgs/". $usuario["img_perfil"]; 
+                                        echo "/api/public/imgs/". $usuario["img_perfil"]; 
                                     ?> class="profileImg">
                                     <h3>
                                         <?php   
