@@ -6,8 +6,8 @@
   },
   "routes": [
     {
-      "src": "/api/public/(.*)",
-      "dest": "/api/public/$1"
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
     },
     {
       "src": "/",
