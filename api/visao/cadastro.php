@@ -1,5 +1,5 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/conexao.php";
+require __DIR__ . "/../conexao.php";
 session_start();
 if (!isset($_SESSION["usuario"])) {
     $logado = false;
