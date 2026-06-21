@@ -21,10 +21,10 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil! | <?=$selecionado["nome"]?> </title>
-    <link rel="stylesheet" href="/api/public/css/style.css">
-    <link rel="stylesheet" href="/api/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="/api/public/js/script.js" defer></script>
+    <script src="/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
@@ -47,11 +47,11 @@ if (!isset($_SESSION["usuario"])) {
     <main id="perfil">
         <section id="seuPerfil">
             <div id="profileInfos">
-                <span style="background-image:url(/api/public/imgs/<?=$selecionado["header"]?>);"></span>
+                <span style="background-image:url(/public/imgs/<?=$selecionado["header"]?>);"></span>
                 
                 <img src=
                     <?php
-                        echo "/api/public/imgs/". $selecionado["img_perfil"]; 
+                        echo "/public/imgs/". $selecionado["img_perfil"]; 
                     ?>
                     id="fotodeperfil"
                 >
@@ -75,7 +75,7 @@ if (!isset($_SESSION["usuario"])) {
         <section id="posts">
             <?php
 
-                $pasta = "/api/public/imgs/*";
+                $pasta = "/public/imgs/*";
                 $imagensProntas = glob($pasta);
                 $posts = mysqli_query($conn, "SELECT * FROM posts WHERE email = '{$selecionado["email"]}'");
             ?>
@@ -85,7 +85,7 @@ if (!isset($_SESSION["usuario"])) {
                 if (mysqli_num_rows($posts) > 0) {
                     while ($imagem = mysqli_fetch_assoc($posts)) {?>
                         <figure onclick="redirecionar('/click/api/visao/publicacao.php?id=<?=$imagem['url']?>')">
-                                <img src="/click/api/public/imgs/<?=$imagem['url']?>">
+                                <img src="/click/public/imgs/<?=$imagem['url']?>">
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>
                                     <i class="fa-solid fa-thumbtack"></i>

@@ -11,7 +11,7 @@
                 ?>
                 <img src=
                     <?php
-                        echo "/api/public/imgs/". $imgPerfil["img_perfil"]; 
+                        echo "/public/imgs/". $imgPerfil["img_perfil"]; 
                     ?>
                  onClick="toggleMenu()" class="profileImg">
                 <div id="menu">

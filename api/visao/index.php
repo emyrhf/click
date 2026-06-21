@@ -14,10 +14,10 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>click!</title>
-    <link rel="stylesheet" href="/api/public/css/style.css">
-    <link rel="stylesheet" href="/api/public/css/reset.css">
+        <link rel="stylesheet" href="/public/css/style.css">
+        <link rel="stylesheet" href="/public/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="/api/public/js/script.js" defer></script>
+        <script src="/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
@@ -39,7 +39,7 @@ if (!isset($_SESSION["usuario"])) {
             <?php
                 $imagens = "SELECT * FROM posts ORDER BY url DESC";
                 $res = mysqli_query($conn, $imagens);
-                $pasta = "/click/api/public/imgs/*";
+                    $pasta = "/click/public/imgs/*";
                 $imagensProntas = glob($pasta);
 
 
@@ -48,7 +48,8 @@ if (!isset($_SESSION["usuario"])) {
                         
 
                         <figure onclick="redirecionar('/click/api/visao/publicacao.php?id=<?=$imagem['url']?>')">
-                                <img src="/click/api/public/imgs/<?=$imagem['url']?>">
+                                <img src="/click/public/imgs/<?=$imagem['url']?>">
+                                    <img src="/click/public/imgs/<?=$imagem['url']?>">
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>
                                     <i class="fa-solid fa-thumbtack"></i>
