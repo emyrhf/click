@@ -27,7 +27,7 @@ if (!isset($_SESSION["usuario"])) {
         <?php
             if ($logado) {
                 echo
-                    '<a id="adicionarPost" href="/click/api/visao/adicionar.php">
+                    '<a id="adicionarPost" href="<?= BASE_URL ?>api/visao/adicionar.php">
                         
                          +
                         
@@ -72,11 +72,11 @@ if (!isset($_SESSION["usuario"])) {
                                         if ($usuario["email"] === $imgPerfil["email"]) {
                                     ?>
                                     <div class="flexButtons">
-                                    <button onClick="location.href = `/click/api/processadores/processar-apagar-post.php?url=<?=$imagem["url"]?>`">deletar post</button>
+                                    <button onClick="location.href = `<?= BASE_URL ?>api/processadores/processar-apagar-post.php?url=<?=$imagem["url"]?>`">deletar post</button>
                                     </div>
                                     <?php } }?>
                             </div>
-                            <div id="informacoesPublicadas" onClick="location.href = `/click/api/visao/perfil.php?usuario=<?=$usuario["username"]?>`">
+                            <div id="informacoesPublicadas" onClick="location.href = `<?= BASE_URL ?>api/visao/perfil.php?usuario=<?=$usuario["username"]?>`">
                                 <div id="perfilPublicado">
                                     <img src=<?php
                                         echo "/public/imgs/". $usuario["img_perfil"]; 

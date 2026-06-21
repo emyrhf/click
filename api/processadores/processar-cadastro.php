@@ -15,11 +15,11 @@
                 session_start();
                 $_SESSION["usuario"] = $usuario;
                 $_SESSION["email"] = $email;
-                header("Location: /click/api/visao");
+                header("Location: <?= BASE_URL ?>api/visao");
                 exit();
             }
         } else {
-        header("Location: /click/api/visao/cadastro.php?erro=1");
+        header("Location: <?= BASE_URL ?>api/visao/cadastro.php?erro=1");
         exit();
         }
     }

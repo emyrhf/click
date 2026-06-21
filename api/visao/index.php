@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . "/../conexao.php";
+require __DIR__ . "/../config.php";
 session_start();
 if (!isset($_SESSION["usuario"])) {
     $logado = false;
@@ -14,10 +15,10 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>click!</title>
-        <link rel="stylesheet" href="/public/css/style.css">
-        <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
+    <script src="<?= BASE_URL ?>/public/js/script.js" defer></script>
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-        <script src="/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
@@ -28,7 +29,7 @@ if (!isset($_SESSION["usuario"])) {
         <?php
             if ($logado) {
                 echo
-                    '<a id="adicionarPost" href="/click/api/visao/adicionar.php">
+                    '<a id="adicionarPost" href="<?= BASE_URL ?>/api/visao/adicionar.php">
                         
                          +
                         
@@ -39,7 +40,7 @@ if (!isset($_SESSION["usuario"])) {
             <?php
                 $imagens = "SELECT * FROM posts ORDER BY url DESC";
                 $res = mysqli_query($conn, $imagens);
-                    $pasta = "/click/public/imgs/*";
+                $pasta = "<?= BASE_URL ?>public/imgs/*";
                 $imagensProntas = glob($pasta);
 
 
@@ -47,9 +48,8 @@ if (!isset($_SESSION["usuario"])) {
                     while ($imagem = mysqli_fetch_assoc($res)) {?>
                         
 
-                        <figure onclick="redirecionar('/click/api/visao/publicacao.php?id=<?=$imagem['url']?>')">
-                                <img src="/click/public/imgs/<?=$imagem['url']?>">
-                                    <img src="/click/public/imgs/<?=$imagem['url']?>">
+                        <figure onclick="redirecionar('<?= BASE_URL ?>/api/visao/publicacao.php?id=<?=$imagem['url']?>')">
+                            <img src="<?= BASE_URL ?>/public/imgs/<?=$imagem['url']?>"> 
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>
                                     <i class="fa-solid fa-thumbtack"></i>

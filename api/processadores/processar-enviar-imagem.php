@@ -21,9 +21,9 @@
 
             $imagem = new Post($conn);
             $imagem->enviar($nome_unico, $_SESSION['email'], $titulo, $descricao);
-            header("Location: /click/api/visao");
+            header("Location: <?= BASE_URL ?>api/visao");
         } else {
-            header("Location: /click/api/visao/cadastro.php?erro=1");
+            header("Location: <?= BASE_URL ?>api/visao/cadastro.php?erro=1");
             exit();
             }
         }

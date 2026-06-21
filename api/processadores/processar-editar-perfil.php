@@ -44,7 +44,7 @@
         $result = mysqli_query($conn, $stmt) or die(mysqli_error($db));
         
 
-        header("location: /click/api/visao/perfil.php?usuario=". $updateUsername);
+        header("location: <?= BASE_URL ?>api/visao/perfil.php?usuario=". $updateUsername);
         
     }
 ?>

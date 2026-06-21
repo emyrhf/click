@@ -31,12 +31,12 @@ if (!isset($_SESSION["usuario"])) {
         include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
 
         if($selecionado["username"] !== $imgPerfil["username"]){
-            header("Location: /click/api/visao");
+            header("Location: <?= BASE_URL ?>api/visao");
         }
     ?>
 
     <main>
-    <form action="/click/api/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
+    <form action="<?= BASE_URL ?>api/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
         <section>
             <label for="updateHeader" class="imageUpdate inputLabel">
                 <img src="/public/imgs/<?=$selecionado["header"]?>" id="profileHeader">
