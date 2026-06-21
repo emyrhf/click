@@ -20,15 +20,15 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edição! | <?=$selecionado["username"]?></title>
-    <link rel="stylesheet" href="../public/css/reset.css">
-    <link rel="stylesheet" href="../public/css/edicao.css">
-    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="/api/public/css/edicao.css">
+    <link rel="stylesheet" href="/api/public/css/header.css">
+    <link rel="stylesheet" href="/api/public/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="../public/js/script.js" defer></script>
+    <script src="/api/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
-        include __DIR__ . "/../components/header.php";
+        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
 
         if($selecionado["username"] !== $imgPerfil["username"]){
             header("Location: /click/api/visao");
