@@ -21,7 +21,7 @@ if (!isset($_SESSION["usuario"])) {
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/header.php";
+        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
     ?>
 
     <main>
