@@ -1,7 +1,7 @@
 <?php    
     session_start();
     
-    require "../conexao.php";
+    require $_SERVER['DOCUMENT_ROOT'] . "/conexao.php";
     include '../modelo/post.php';
 
     session_start();

@@ -1,5 +1,5 @@
 <?php
-require "../conexao.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/conexao.php";
 require "Autenticacao.php";
 
 if ($_SERVER["REQUEST_METHOD"] =="POST"){
