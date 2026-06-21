@@ -16,7 +16,7 @@
             $extencao_img = pathinfo($nome_img, PATHINFO_EXTENSION);
 
             $nome_unico  = uniqid("upload-", true).'.'.$extencao_img;
-            $enviar_para = '/api/public/imgs/'.$nome_unico;
+            $enviar_para = '/public/imgs/'.$nome_unico;
             move_uploaded_file($temp_nome_img, $enviar_para);
 
             $imagem = new Post($conn);
