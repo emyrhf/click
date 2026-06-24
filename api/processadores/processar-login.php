@@ -1,6 +1,7 @@
 <?php
 require __DIR__ . "/../conexao.php";
-require __DIR__ . "Autenticacao.php";
+require __DIR__ . "<?= BASE_URL ?>api/processadores/Autenticacao.php";
+
 
 if ($_SERVER["REQUEST_METHOD"] =="POST"){
     $email = $_POST["email"];
