@@ -59,7 +59,7 @@ if (!isset($_SESSION["usuario"])) {
 
     <?php    
     include $_SERVER['DOCUMENT_ROOT'] . "/api/conexao.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/Usuario.php';
+    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/Usuario.php";
     ?>
 
     <footer></footer>
