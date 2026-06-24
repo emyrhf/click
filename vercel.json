@@ -6,10 +6,19 @@
   },
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/cadastro",
+      "dest": "/api/cadastro.php"
+    },
+    {
+      "src": "/((?!public|api).* )",
       "dest": "/api/index.php"
     }
   ]
