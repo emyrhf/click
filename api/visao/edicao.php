@@ -20,11 +20,11 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edição! | <?=$selecionado["username"]?></title>
-    <link rel="stylesheet" href="/public/css/edicao.css">
-    <link rel="stylesheet" href="/public/css/header.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/css/edicao.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="/public/js/script.js" defer></script>
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <?php
@@ -39,7 +39,7 @@ if (!isset($_SESSION["usuario"])) {
     <form action="<?= BASE_URL ?>api/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
         <section>
             <label for="updateHeader" class="imageUpdate inputLabel">
-                <img src="/public/imgs/<?=$selecionado["header"]?>" id="profileHeader">
+                <img src="/imgs/<?=$selecionado["header"]?>" id="profileHeader">
                 <span class="spanLabel center">
                     <i class="fa-solid fa-pen"></i>
                 </span>
@@ -49,7 +49,7 @@ if (!isset($_SESSION["usuario"])) {
         <section>
             <div>
                 <label for="updateProfilePic" class="imageUpdate inputLabel" >
-                    <img src="/public/imgs/<?=$selecionado["img_perfil"]?>" id="profilePic">
+                    <img src="/imgs/<?=$selecionado["img_perfil"]?>" id="profilePic">
                     <span class="spanLabel right">
                         <i class="fa-solid fa-pen"></i>
                     </span>

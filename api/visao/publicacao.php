@@ -14,10 +14,10 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>post!</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="/public/js/script.js" defer></script>
+    <script src="/js/script.js" defer></script>
 </head>
 <body>
     <?php
@@ -59,7 +59,7 @@ if (!isset($_SESSION["usuario"])) {
                         <div id="postContainer">
                             <div id="fotoPublicada">
                                 <figure>
-                                    <img src="/public/imgs/<?=$imagem['url']?>">
+                                    <img src="/imgs/<?=$imagem['url']?>">
                                     <figcaption>
                                         <h3><?=$imagem['titulo']?></h3>
                                         <i class="fa-solid fa-thumbtack"></i>
@@ -79,7 +79,7 @@ if (!isset($_SESSION["usuario"])) {
                             <div id="informacoesPublicadas" onClick="location.href = `<?= BASE_URL ?>api/visao/perfil.php?usuario=<?=$usuario["username"]?>`">
                                 <div id="perfilPublicado">
                                     <img src=<?php
-                                        echo "/public/imgs/". $usuario["img_perfil"]; 
+                                        echo "/imgs/". $usuario["img_perfil"]; 
                                     ?> class="profileImg">
                                     <h3>
                                         <?php   

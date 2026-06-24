@@ -15,9 +15,9 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>click!</title>
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
-    <script src="<?= BASE_URL ?>/public/js/script.js" defer></script>
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/reset.css">
+    <script src="<?= BASE_URL ?>/js/script.js" defer></script>
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -48,8 +48,8 @@ if (!isset($_SESSION["usuario"])) {
                     while ($imagem = mysqli_fetch_assoc($res)) {?>
                         
 
-                        <figure onclick="redirecionar('<?= BASE_URL ?>/api/visao/publicacao.php?id=<?=$imagem['url']?>')">
-                            <img src="<?= BASE_URL ?>/public/imgs/<?=$imagem['url']?>"> 
+                        <figure onclick="redirecionar('<?= BASE_URL ?>/api/visaoacao.php?id=<?=$imagem['url']?>')">
+                            <img src="<?= BASE_URL ?>/imgs/<?=$imagem['url']?>"> 
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>
                                     <i class="fa-solid fa-thumbtack"></i>

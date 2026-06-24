@@ -12,7 +12,7 @@
                 ?>
                 <img src=
                     <?php
-                        echo BASE_URL . "/public/imgs/" . $imgPerfil["img_perfil"];
+                        echo BASE_URL . "/imgs/" . $imgPerfil["img_perfil"];
                     ?>
                  onClick="toggleMenu()" class="profileImg">
                 <div id="menu">
