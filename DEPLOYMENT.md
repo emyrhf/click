@@ -62,17 +62,20 @@ git push
 1. Acesse [Vercel Dashboard](https://vercel.com/dashboard)
 2. Clique em "New Project"
 3. Selecione seu repositório do GitHub (click)
-4. Configure as variáveis de ambiente:
+4. **Antes de clicar Deploy**, vá para "Environment Variables"
+5. Configure as variáveis exatamente assim:
 
-Na seção "Environment Variables", adicione:
-```
-DB_HOST = mysql-emyrhf.alwaysdata.net
-DB_USER = emyrhf
-DB_PASSWORD = sua_senha_aqui
-DB_NAME = emyrhf_click_db
-```
+| Nome | Valor |
+|------|-------|
+| `DB_HOST` | `mysql-emyrhf.alwaysdata.net` |
+| `DB_USER` | `emyrhf` |
+| `DB_PASSWORD` | (sua senha do banco) |
+| `DB_NAME` | `emyrhf_click_db` |
 
-**Importante:** Nunca compartilhe a senha. Use variáveis de ambiente securas.
+> ⚠️ **Importante**: Ative para "Production" (ou todos os ambientes) ao configurar as variáveis.
+
+6. Clique em "Add" para cada variável
+7. Agora sim, clique "Deploy"
 
 ### Passo 3: Deploy
 
@@ -149,6 +152,22 @@ click/
 ---
 
 ## Resolução de Problemas
+
+### ❌ Erro: "Environment Variable references Secret which does not exist"
+
+**Causa**: As variáveis de ambiente não foram configuradas no Vercel Dashboard antes do deploy.
+
+**Solução**:
+1. Acesse [Vercel Dashboard](https://vercel.com/dashboard)
+2. Clique no seu projeto "click"
+3. Vá para **Settings** → **Environment Variables**
+4. Adicione todas as 4 variáveis:
+   - `DB_HOST` = `mysql-emyrhf.alwaysdata.net`
+   - `DB_USER` = `emyrhf`
+   - `DB_PASSWORD` = (sua senha)
+   - `DB_NAME` = `emyrhf_click_db`
+5. Selecione "Production" para cada uma
+6. Clique em **Redeploy** (ou faça um novo push)
 
 ### ❌ Erro 404 ao acessar a página
 
