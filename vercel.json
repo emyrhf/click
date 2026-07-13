@@ -6,28 +6,20 @@
   },
   "routes": [
     {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
+      "src": "^/public/(.+)$",
+      "dest": "/api/static.php"
     },
     {
-      "src": "/",
+      "src": "^/$",
       "dest": "/api/visao/index.php"
     },
     {
-      "src": "/visao/([a-zA-Z0-9_-]+)",
+      "src": "^/visao/([a-zA-Z0-9_-]+)/?$",
       "dest": "/api/visao/$1.php"
     },
     {
-      "src": "/processadores/([a-zA-Z0-9_-]+)",
+      "src": "^/processadores/([a-zA-Z0-9_-]+)/?$",
       "dest": "/api/processadores/$1.php"
-    },
-    {
-      "src": "/processadores/([a-zA-Z0-9_-]+)/",
-      "dest": "/api/processadores/$1.php"
-    },
-    {
-      "src": "/visao/([a-zA-Z0-9_-]+)/",
-      "dest": "/api/visao/$1.php"
     }
   ]
 }
