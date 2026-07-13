@@ -36,7 +36,7 @@ if (!isset($_SESSION["usuario"])) {
         
         if ($logado) {
             echo'
-                <a id="adicionarPost" href="<?= BASE_URL ?>/visao/adicionar.php">
+                <a id="adicionarPost" href="<?= BASE_URL ?>/visao/adicionar">
                     + 
                 </a>
             ';
@@ -64,7 +64,7 @@ if (!isset($_SESSION["usuario"])) {
                     if (isset($isUser)) {
                         ?>
                             <div class="flexButtons">
-                                <a href="<?= BASE_URL ?>/visao/edicao.php?usuario=<?=$selecionado["username"]\">editar perfil</a>
+                                <a href="<?= BASE_URL ?>/visao/edicao?usuario=<?=$selecionado["username"]\">editar perfil</a>
                                 <button>compartilhar perfil</button>
                             </div>
                         <?php
@@ -81,7 +81,7 @@ if (!isset($_SESSION["usuario"])) {
                 <?php
                 if (mysqli_num_rows($posts) > 0) {
                     while ($imagem = mysqli_fetch_assoc($posts)) {?>
-                        <figure onclick="redirecionar('<?= BASE_URL ?>/visao/publicacao.php?id=<?=$imagem['url']?>')">>
+                        <figure onclick="redirecionar('<?= BASE_URL ?>/visao/publicacao?id=<?=$imagem['url']?>')">
                                 <img src="<?= BASE_URL ?>public/imgs/<?=$imagem['url']?>">
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>

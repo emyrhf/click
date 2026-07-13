@@ -20,7 +20,7 @@
                 exit();
             }
         } else {
-        header("Location: " . BASE_URL . "/visao/cadastro.php?erro=1");
+        header("Location: " . BASE_URL . "/visao/cadastro?erro=1");
         exit();
         }
     }

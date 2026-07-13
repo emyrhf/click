@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . "/../config.php";
 require __DIR__ . "/../conexao.php";
 session_start();
 if (!isset($_SESSION["usuario"])) {
@@ -36,7 +37,7 @@ if (!isset($_SESSION["usuario"])) {
     ?>
 
     <main>
-    <form action="<?= BASE_URL ?>/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
+    <form action="<?= BASE_URL ?>/processadores/processar-editar-perfil" method="post" enctype="multipart/form-data">
         <section>
             <label for="updateHeader" class="imageUpdate inputLabel">
                 <img src="<?= BASE_URL ?>/public/imgs/<?=$selecionado["header"]?>" id="profileHeader">

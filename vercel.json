@@ -10,15 +10,23 @@
       "dest": "/public/$1"
     },
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
       "src": "/",
       "dest": "/api/visao/index.php"
     },
     {
-      "src": "/(.*)",
+      "src": "/visao/([a-zA-Z0-9_-]+)",
+      "dest": "/api/visao/$1.php"
+    },
+    {
+      "src": "/processadores/([a-zA-Z0-9_-]+)",
+      "dest": "/api/processadores/$1.php"
+    },
+    {
+      "src": "/processadores/([a-zA-Z0-9_-]+)/",
+      "dest": "/api/processadores/$1.php"
+    },
+    {
+      "src": "/visao/([a-zA-Z0-9_-]+)/",
       "dest": "/api/visao/$1.php"
     }
   ]

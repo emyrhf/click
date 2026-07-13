@@ -29,7 +29,7 @@ if (!isset($_SESSION["usuario"])) {
         <div id="formContainer">
             <h3>cadastre-se</h3>
             
-            <form method="post" id="formulario" action="../processadores/processar-cadastro.php">
+            <form method="post" id="formulario" action="<?= BASE_URL ?>/processadores/processar-cadastro">
                 <div class="inputContainer">
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" id="nome">

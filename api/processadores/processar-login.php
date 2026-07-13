@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] =="POST"){
         header("Location: " . BASE_URL . "/visao/index.php");
         exit;
     }else{
-        header("Location: " . BASE_URL . "/visao/login.php?erro=1");
+        header("Location: " . BASE_URL . "/visao/login?erro=1");
     }
 }
 ?>

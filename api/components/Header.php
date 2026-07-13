@@ -18,18 +18,18 @@
                 <div id="menu">
                     <h3>Bem vindo, <?=$imgPerfil["nome"]?></h3>
                 
-                    <a href="<?= BASE_URL ?>/visao/perfil.php?usuario=<?=$imgPerfil["username"]?>" class="editarperfil">
+                    <a href="<?= BASE_URL ?>/visao/perfil?usuario=<?=$imgPerfil["username"]?>" class="editarperfil">
                         <i class="fa-solid fa-user"></i>
                         Meu Perfil
                     </a>
-                    <a href="<?= BASE_URL ?>/processadores/processar-loggout.php?token=<?=md5(session_id())?>" class="deslogar">Sair</a>
+                    <a href="<?= BASE_URL ?>/processadores/processar-loggout?token=<?=md5(session_id())?>" class="deslogar">Sair</a>
                 </div>
                 <?php
             } else {
                 ?>
                 <div class="conta">
-                    <a href="<?= BASE_URL ?>/visao/login.php">Entrar</a>
-                    <a href="<?= BASE_URL ?>/visao/cadastro.php">Criar conta</a>
+                    <a href="<?= BASE_URL ?>/visao/login">Entrar</a>
+                    <a href="<?= BASE_URL ?>/visao/cadastro">Criar conta</a>
                 </div>
                 <?php
             }

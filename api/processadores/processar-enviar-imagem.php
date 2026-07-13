@@ -25,7 +25,7 @@
             header("Location: " . BASE_URL . "/visao/index.php");
             exit;
         } else {
-            header("Location: " . BASE_URL . "/visao/adicionar.php?erro=1");
+            header("Location: " . BASE_URL . "/visao/adicionar?erro=1");
             exit();
             }
         }

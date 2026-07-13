@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . "/../config.php";
 require __DIR__ . "/../conexao.php";
 session_start();
 if (!isset($_SESSION["usuario"])) {
@@ -24,7 +25,7 @@ if (!isset($_SESSION["usuario"])) {
         include COMPONENTS_PATH . 'Header.php';
     ?>
     <main>
-        <form action="../processadores/processar-enviar-imagem.php"
+        <form action="<?= BASE_URL ?>/processadores/processar-enviar-imagem" method="post" enctype="multipart/form-data">
             method="post"
             enctype="multipart/form-data" id="enviarFotos">
 
