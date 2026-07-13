@@ -9,22 +9,22 @@ $path = parse_url($requestUri, PHP_URL_PATH);
 // Remove /public/ do início
 $path = preg_replace('^/public/', '', $path);
 
-// Caminho do arquivo (sobe um nível da pasta api)
-$file = __DIR__ . '/../public' . $path;
+// Caminho do arquivo (agora está dentro de /api/public)
+$file = __DIR__ . '/public' . $path;
 
 // Verificar se arquivo existe e é seguro
 if (!file_exists($file) || !is_file($file)) {
     http_response_code(404);
     error_log("Arquivo não encontrado: " . $file);
-    echo "404 - Arquivo não encontrado: " . htmlspecialchars($file);
+    echo "404 - Arquivo não encontrado";
     exit;
 }
 
 // Verificar se está dentro de public (segurança)
 $realFile = realpath($file);
-$realPublic = realpath(__DIR__ . '/../public');
+$realPublic = realpath(__DIR__ . '/public');
 
-if ($realFile === false || strpos($realFile, $realPublic) !== 0) {
+if ($realFile === false || strpos($realPublic !== null ? $realFile : '', $realPublic !== null ? $realPublic : '') !== 0) {
     http_response_code(403);
     error_log("Acesso negado: " . $file);
     echo "403 - Acesso negado";
