@@ -1,4 +1,7 @@
 {
+  "version": 2,
+  "buildCommand": "true",
+  "outputDirectory": "./",
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.9.0"
@@ -6,14 +9,12 @@
   },
   "routes": [
     {
-      "src": "/public/(.*)",
-      "dest": "/public/$1",
-      "check": true
+      "src": "^/public/(.*)$",
+      "dest": "/public/$1"
     },
     {
-      "src": "/(.*\\.(css|js|jpg|jpeg|png|gif|svg|webp|woff|woff2|ttf|eot))",
-      "dest": "/public/$1",
-      "check": true
+      "src": "^/(.+\\.(css|js|jpg|png|gif|svg|webp|ico|woff|woff2))$",
+      "dest": "/public/$1"
     },
     {
       "src": "^/$",
@@ -24,12 +25,16 @@
       "dest": "/api/visao/index.php"
     },
     {
-      "src": "^/visao/([a-zA-Z0-9_-]+)/?$",
+      "src": "^/visao/([^/]+)/?$",
       "dest": "/api/visao/$1.php"
     },
     {
-      "src": "^/processadores/([a-zA-Z0-9_-]+)/?$",
+      "src": "^/processadores/([^/]+)/?$",
       "dest": "/api/processadores/$1.php"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/api/visao/index.php"
     }
   ]
 }
