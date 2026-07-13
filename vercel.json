@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "true",
-  "outputDirectory": "./",
   "functions": {
     "api/**/*.php": {
       "runtime": "vercel-php@0.9.0"
@@ -13,28 +11,8 @@
       "dest": "/public/$1"
     },
     {
-      "src": "^/(.+\\.(css|js|jpg|png|gif|svg|webp|ico|woff|woff2))$",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "^/$",
-      "dest": "/api/visao/index.php"
-    },
-    {
-      "src": "^/visao/?$",
-      "dest": "/api/visao/index.php"
-    },
-    {
-      "src": "^/visao/([^/]+)/?$",
-      "dest": "/api/visao/$1.php"
-    },
-    {
-      "src": "^/processadores/([^/]+)/?$",
-      "dest": "/api/processadores/$1.php"
-    },
-    {
       "src": "^/(.*)$",
-      "dest": "/api/visao/index.php"
+      "dest": "/api/index.php?url=$1"
     }
   ]
 }
