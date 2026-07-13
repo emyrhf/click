@@ -28,13 +28,7 @@ if ($url === '/' || $url === '') {
         echo "Processador não encontrado";
     }
 } else {
-    // Tenta servir como visão
-    $file = __DIR__ . '/visao' . $url . '.php';
-    if (file_exists($file)) {
-        require $file;
-    } else {
-        // Fallback para página inicial
-        require __DIR__ . '/visao/index.php';
-    }
+    // Fallback para página inicial
+    require __DIR__ . '/visao/index.php';
 }
 ?>
