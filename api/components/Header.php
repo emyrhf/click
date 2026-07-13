@@ -4,7 +4,7 @@
 ?>
 
 <header id="header">
-    <a href="<?= BASE_URL ?>/visao" id="logo">click!</a>
+    <a href="<?= BASE_URL ?>/" id="logo">click!</a>
     <div>
         <input type="text" name="pesquisa" id="pesquisa">
         <?php 

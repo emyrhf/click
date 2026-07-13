@@ -6,11 +6,21 @@
   },
   "routes": [
     {
-      "src": "^/public/(.+)$",
-      "dest": "/api/static.php"
+      "src": "/public/(.*)",
+      "dest": "/public/$1",
+      "check": true
+    },
+    {
+      "src": "/(.*\\.(css|js|jpg|jpeg|png|gif|svg|webp|woff|woff2|ttf|eot))",
+      "dest": "/public/$1",
+      "check": true
     },
     {
       "src": "^/$",
+      "dest": "/api/visao/index.php"
+    },
+    {
+      "src": "^/visao/?$",
       "dest": "/api/visao/index.php"
     },
     {
