@@ -1,5 +1,11 @@
 <?php
 
+// Prevent multiple inclusions
+if (defined('CONFIG_LOADED')) {
+    return;
+}
+define('CONFIG_LOADED', true);
+
 // Load environment variables
 if (file_exists(__DIR__ . '/../.env')) {
     $dotenv = parse_ini_file(__DIR__ . '/../.env');
