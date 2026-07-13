@@ -1,6 +1,7 @@
 <?php    
+    require __DIR__ . '/../config.php';
     include __DIR__ . "/../conexao.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/usuario.php";
+    include MODELS_PATH . 'usuario.php';
 
     if (($_SERVER["REQUEST_METHOD"]=="POST")){
         $nome = $_POST["nome"];
@@ -15,11 +16,11 @@
                 session_start();
                 $_SESSION["usuario"] = $usuario;
                 $_SESSION["email"] = $email;
-                header("Location: <?= BASE_URL ?>api/visao");
+                header("Location: " . BASE_URL . "/visao/index.php");
                 exit();
             }
         } else {
-        header("Location: <?= BASE_URL ?>api/visao/cadastro.php?erro=1");
+        header("Location: " . BASE_URL . "/visao/cadastro.php?erro=1");
         exit();
         }
     }

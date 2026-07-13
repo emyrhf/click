@@ -20,15 +20,15 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>edição! | <?=$selecionado["username"]?></title>
-    <link rel="stylesheet" href="/public/css/edicao.css">
-    <link rel="stylesheet" href="/public/css/header.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/edicao.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/header.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
     <script src="/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
+        include COMPONENTS_PATH . 'Header.php';
 
         if($selecionado["username"] !== $imgPerfil["username"]){
             header("Location: <?= BASE_URL ?>api/visao");
@@ -36,10 +36,10 @@ if (!isset($_SESSION["usuario"])) {
     ?>
 
     <main>
-    <form action="<?= BASE_URL ?>api/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
+    <form action="<?= BASE_URL ?>/processadores/processar-editar-perfil.php" method="post" enctype="multipart/form-data">
         <section>
             <label for="updateHeader" class="imageUpdate inputLabel">
-                <img src="/imgs/<?=$selecionado["header"]?>" id="profileHeader">
+                <img src="<?= BASE_URL ?>/public/imgs/<?=$selecionado["header"]?>" id="profileHeader">
                 <span class="spanLabel center">
                     <i class="fa-solid fa-pen"></i>
                 </span>
@@ -49,7 +49,7 @@ if (!isset($_SESSION["usuario"])) {
         <section>
             <div>
                 <label for="updateProfilePic" class="imageUpdate inputLabel" >
-                    <img src="/imgs/<?=$selecionado["img_perfil"]?>" id="profilePic">
+                    <img src="<?= BASE_URL ?>/public/imgs/<?=$selecionado["img_perfil"]?>" id="profilePic">
                     <span class="spanLabel right">
                         <i class="fa-solid fa-pen"></i>
                     </span>

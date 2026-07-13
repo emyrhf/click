@@ -1,8 +1,9 @@
 <?php    
     session_start();
     
+    require __DIR__ . "/../config.php";
     require __DIR__ . "/../conexao.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/post.php";
+    include MODELS_PATH . 'post.php';
 
     session_start();
     if (!isset($_SESSION["usuario"])) {
@@ -20,8 +21,8 @@
     }
 
     if (mysqli_stmt_affected_rows($stmt) > 0) {
-        echo "Post excluído com sucesso!";
-        header("location: <?= BASE_URL ?>api/visao/index.php?`");
+        header("Location: " . BASE_URL . "/visao/index.php");
+        exit;
     } else {
         echo "Nenhum post encontrado para excluir.";
     }

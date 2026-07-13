@@ -1,4 +1,4 @@
 <?php
-    header("Location: <?= BASE_URL ?>api/visao/index.php");
-    exit;
+header("Location: " . (defined('BASE_URL') ? BASE_URL : '') . "/visao/index.php");
+exit;
 ?>

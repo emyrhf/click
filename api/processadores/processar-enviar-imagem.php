@@ -1,7 +1,8 @@
 <?php    
     session_start();
-    include include $_SERVER['DOCUMENT_ROOT'] . "/api/conexao.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/post.php";
+    require __DIR__ . "/../config.php";
+    include __DIR__ . "/../conexao.php";
+    include MODELS_PATH . 'post.php';
 
     if (isset($_POST['enviar']) && isset($_FILES['imagemAdicionada'])) {
         $titulo = $_POST["tituloDaImagem"];
@@ -21,9 +22,10 @@
 
             $imagem = new Post($conn);
             $imagem->enviar($nome_unico, $_SESSION['email'], $titulo, $descricao);
-            header("Location: <?= BASE_URL ?>api/visao");
+            header("Location: " . BASE_URL . "/visao/index.php");
+            exit;
         } else {
-            header("Location: <?= BASE_URL ?>api/visao/cadastro.php?erro=1");
+            header("Location: " . BASE_URL . "/visao/adicionar.php?erro=1");
             exit();
             }
         }

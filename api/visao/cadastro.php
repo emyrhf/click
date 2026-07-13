@@ -1,11 +1,13 @@
 <?php
+require __DIR__ . "/../config.php";
 require __DIR__ . "/../conexao.php";
 session_start();
 if (!isset($_SESSION["usuario"])) {
     $logado = false;
 } else {
     $logado = true;
-    header("<?= BASE_URL ?>api/visao/index.php");
+    header("Location: " . BASE_URL . "/visao/index.php");
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -15,13 +17,13 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro!</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
-    <script src="/public/js/script.js" defer></script>
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
+    <script src="<?= BASE_URL ?>/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
+        include COMPONENTS_PATH . 'Header.php';
     ?>
     <main id="formMain">
         <div id="formContainer">
@@ -58,8 +60,7 @@ if (!isset($_SESSION["usuario"])) {
     </main>
 
     <?php    
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/conexao.php";
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/modelo/usuario.php";
+        include MODELS_PATH . 'usuario.php';
     ?>
 
     <footer></footer>

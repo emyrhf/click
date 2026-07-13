@@ -1,6 +1,7 @@
 <?php
+require __DIR__ . "/../config.php";
 require __DIR__ . "/../conexao.php";
-require __DIR__ . "<?= BASE_URL ?>api/processadores/Autenticacao.php";
+require __DIR__ . "/Autenticacao.php";
 
 
 if ($_SERVER["REQUEST_METHOD"] =="POST"){
@@ -13,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] =="POST"){
         session_start();
         $_SESSION["usuario"] = $usuario;
         $_SESSION["email"] = $email;
-        header("Location: <?= BASE_URL ?>api/visao");
+        header("Location: " . BASE_URL . "/visao/index.php");
         exit;
     }else{
-        header("Location: <?= BASE_URL ?>api/visao/login.php?erro=1");
+        header("Location: " . BASE_URL . "/visao/login.php?erro=1");
     }
 }
 ?>

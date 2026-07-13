@@ -14,20 +14,20 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>post!</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="/public/js/script.js" defer></script>
+    <script src="<?= BASE_URL ?>/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
+        include COMPONENTS_PATH . 'Header.php';
     ?>
     <main>
         <?php
             if ($logado) {
                 echo
-                    '<a id="adicionarPost" href="<?= BASE_URL ?>api/visao/adicionar.php">
+                    '<a id="adicionarPost" href="<?= BASE_URL ?>/visao/adicionar.php">
                         
                          +
                         
@@ -59,7 +59,7 @@ if (!isset($_SESSION["usuario"])) {
                         <div id="postContainer">
                             <div id="fotoPublicada">
                                 <figure>
-                                    <img src="/imgs/<?=$imagem['url']?>">
+                                    <img src="<?= BASE_URL ?>/public/imgs/<?=$imagem['url']?>">>
                                     <figcaption>
                                         <h3><?=$imagem['titulo']?></h3>
                                         <i class="fa-solid fa-thumbtack"></i>
@@ -72,14 +72,14 @@ if (!isset($_SESSION["usuario"])) {
                                         if ($usuario["email"] === $imgPerfil["email"]) {
                                     ?>
                                     <div class="flexButtons">
-                                    <button onClick="location.href = `<?= BASE_URL ?>api/processadores/processar-apagar-post.php?url=<?=$imagem["url"]?>`">deletar post</button>
+                                    <button onClick="location.href = `<?= BASE_URL ?>/processadores/processar-apagar-post.php?url=<?=$imagem["url"]?>`">deletar post</button>
                                     </div>
                                     <?php } }?>
                             </div>
-                            <div id="informacoesPublicadas" onClick="location.href = `<?= BASE_URL ?>api/visao/perfil.php?usuario=<?=$usuario["username"]?>`">
+                            <div id="informacoesPublicadas" onClick="location.href = `<?= BASE_URL ?>/visao/perfil.php?usuario=<?=$usuario["username"]?>`">
                                 <div id="perfilPublicado">
                                     <img src=<?php
-                                        echo "/imgs/". $usuario["img_perfil"]; 
+                                        echo BASE_URL . "/public/imgs/". $usuario["img_perfil"]; 
                                     ?> class="profileImg">
                                     <h3>
                                         <?php   

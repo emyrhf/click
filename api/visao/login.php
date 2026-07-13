@@ -15,13 +15,13 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>entrar!</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
-    <script src="/public/js/script.js" defer></script>
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
+    <script src="<?= BASE_URL ?>/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
+        include COMPONENTS_PATH . 'Header.php';
     ?>
     <main id="formMain">
         <div id="formContainer">

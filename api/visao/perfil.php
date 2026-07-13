@@ -21,14 +21,14 @@ if (!isset($_SESSION["usuario"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil! | <?=$selecionado["nome"]?> </title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/reset.css">
     <script src="https://kit.fontawesome.com/4c0a49f720.js" crossorigin="anonymous"></script>
-    <script src="/public/js/script.js" defer></script>
+    <script src="<?= BASE_URL ?>/public/js/script.js" defer></script>
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";;
+        include COMPONENTS_PATH . 'Header.php';
         if (isset($imgPerfil)) {
             $isUser = $selecionado["username"] === $imgPerfil["username"];
         }
@@ -36,7 +36,7 @@ if (!isset($_SESSION["usuario"])) {
         
         if ($logado) {
             echo'
-                <a id="adicionarPost" href="<?= BASE_URL ?>api/visao/adicionar.php">
+                <a id="adicionarPost" href="<?= BASE_URL ?>/visao/adicionar.php">
                     + 
                 </a>
             ';
@@ -47,11 +47,11 @@ if (!isset($_SESSION["usuario"])) {
     <main id="perfil">
         <section id="seuPerfil">
             <div id="profileInfos">
-                <span style="background-image:url(/imgs/<?=$selecionado["header"]?>);"></span>
+                <span style="background-image:url(<?= BASE_URL ?>/public/imgs/<?=$selecionado["header"]?>);"></span>
                 
                 <img src=
                     <?php
-                        echo "/imgs/". $selecionado["img_perfil"]; 
+                        echo BASE_URL . "/public/imgs/". $selecionado["img_perfil"]; 
                     ?>
                     id="fotodeperfil"
                 >
@@ -64,7 +64,7 @@ if (!isset($_SESSION["usuario"])) {
                     if (isset($isUser)) {
                         ?>
                             <div class="flexButtons">
-                                <a href="<?= BASE_URL ?>api/visao/edicao.php?usuario=<?=$selecionado["username"]?>">editar perfil</a>
+                                <a href="<?= BASE_URL ?>/visao/edicao.php?usuario=<?=$selecionado["username"]\">editar perfil</a>
                                 <button>compartilhar perfil</button>
                             </div>
                         <?php
@@ -74,9 +74,6 @@ if (!isset($_SESSION["usuario"])) {
         </section>
         <section id="posts">
             <?php
-
-                $pasta = "/imgs/*";
-                $imagensProntas = glob($pasta);
                 $posts = mysqli_query($conn, "SELECT * FROM posts WHERE email = '{$selecionado["email"]}'");
             ?>
 
@@ -84,7 +81,7 @@ if (!isset($_SESSION["usuario"])) {
                 <?php
                 if (mysqli_num_rows($posts) > 0) {
                     while ($imagem = mysqli_fetch_assoc($posts)) {?>
-                        <figure onclick="redirecionar('<?= BASE_URL ?>api/visaoacao.php?id=<?=$imagem['url']?>')">
+                        <figure onclick="redirecionar('<?= BASE_URL ?>/visao/publicacao.php?id=<?=$imagem['url']?>')">>
                                 <img src="<?= BASE_URL ?>public/imgs/<?=$imagem['url']?>">
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>

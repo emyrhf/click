@@ -22,14 +22,14 @@ if (!isset($_SESSION["usuario"])) {
 </head>
 <body>
     <?php
-        include $_SERVER['DOCUMENT_ROOT'] . "/api/components/Header.php";
+        include COMPONENTS_PATH . 'Header.php';
     ?>
 
     <main>
         <?php
             if ($logado) {
                 echo
-                    '<a id="adicionarPost" href="<?= BASE_URL ?>/api/visao/adicionar.php">
+                    '<a id="adicionarPost" href="<?= BASE_URL ?>/visao/adicionar.php">
                         
                          +
                         
@@ -40,16 +40,13 @@ if (!isset($_SESSION["usuario"])) {
             <?php
                 $imagens = "SELECT * FROM posts ORDER BY url DESC";
                 $res = mysqli_query($conn, $imagens);
-                $pasta = "<?= BASE_URL ?>public/imgs/*";
-                $imagensProntas = glob($pasta);
-
 
                 if (mysqli_num_rows($res) > 0) {
                     while ($imagem = mysqli_fetch_assoc($res)) {?>
                         
 
-                        <figure onclick="redirecionar('<?= BASE_URL ?>/api/visaoacao.php?id=<?=$imagem['url']?>')">
-                            <img src="<?= BASE_URL ?>/imgs/<?=$imagem['url']?>"> 
+                        <figure onclick="redirecionar('<?= BASE_URL ?>/visao/publicacao.php?id=<?=$imagem['url']?>')">
+                            <img src="<?= BASE_URL ?>/public/imgs/<?=$imagem['url']?>"> 
                                 <figcaption>
                                     <h3><?=$imagem['titulo']?></h3>
                                     <i class="fa-solid fa-thumbtack"></i>

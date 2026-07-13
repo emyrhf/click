@@ -1,4 +1,5 @@
 <?php
+    require __DIR__ . "/../config.php";
     include __DIR__ . "/../conexao.php";
     if (($_SERVER["REQUEST_METHOD"]=="POST")){
         $updateNome = $_POST["updateNome"];
@@ -44,7 +45,7 @@
         $result = mysqli_query($conn, $stmt) or die(mysqli_error($db));
         
 
-        header("location: <?= BASE_URL ?>api/visao/perfil.php?usuario=". $updateUsername);
+        header("Location: " . BASE_URL . "/visao/perfil.php?usuario=" . $updateUsername);
         
     }
 ?>
