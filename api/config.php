@@ -34,8 +34,3 @@ define('COMPONENTS_PATH', ROOT_PATH . 'components/');
 define('MODELS_PATH', ROOT_PATH . 'modelo/');
 define('PROCESSORS_PATH', ROOT_PATH . 'processadores/');
 define('VIEWS_PATH', ROOT_PATH . 'visao/');
-
-// Helper function to get absolute path
-function getIncludePath($file) {
-    return ROOT_PATH . $file;
-}
